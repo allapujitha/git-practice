@@ -6,7 +6,7 @@
 
     orders as (
 
-    select * from {{ ref('istg_jaffle_shop__orders') }}
+    select * from {{ ref('stg_jaffle_shop__orders') }}
 
     ),
 
@@ -19,7 +19,7 @@
         max(order_date) as most_recent_order_date,
         count(order_id) as number_of_orders
 
-    from orders
+    from orders_table
 
     group by 1
 
