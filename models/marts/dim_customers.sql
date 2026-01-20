@@ -1,16 +1,16 @@
-with customers as (
+    with customers as (
 
-select * from {{ ref('stg_jaffle_shop__customers') }}
+    select * from {{ ref('stg_jaffle_shop__customers') }}
 
-),
+    ),
 
-orders as (
+    orders as (
 
-select * from {{ ref('istg_jaffle_shop__orders') }}
+    select * from {{ ref('istg_jaffle_shop__orders') }}
 
-),
+    ),
 
-customer_orders as (
+    customer_orders as (
 
     select
         customer_id,
