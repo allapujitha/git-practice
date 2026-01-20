@@ -1,16 +1,16 @@
-with customers as (
+    with customers as (
 
-select * from {{ ref('stg_jaffle_shop__customers') }}
+    select * from {{ ref('stg_jaffle_shop__customers') }}
 
-),
+    ),
 
-orders as (
+    orders as (
 
-select * from {{ ref('stg_jaffle_shop__orders') }}
+    select * from {{ ref('stg_jaffle_shop__orders') }}
 
-),
+    ),
 
-customer_orders as (
+    customer_orders as (
 
     select
         customer_id,
@@ -19,7 +19,7 @@ customer_orders as (
         max(order_date) as most_recent_order_date,
         count(order_id) as number_of_orders
 
-    from orders
+    from orders_table
 
     group by 1
 
